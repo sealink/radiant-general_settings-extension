@@ -1,0 +1,23 @@
+%h1
+  New General Setting
+
+.form-area
+  - form_for @general_setting, :url => admin_general_settings_path, :html => {:class => 'form-horizontal'} do |f|
+    .control-group
+      %label.control-label Key
+      .controls
+        = f.text_field(:key)
+
+    .control-group
+      %label.control-label Value
+      .controls
+        = f.text_area :value, :rows => '5'
+
+    .control-group
+      %label.control-label Description
+      .controls
+        = f.text_area :description, :rows => '5'
+
+    .form-actions
+      = f.submit "Submit", :class => 'btn btn-primary'
+      = link_to 'Cancel', admin_general_settings_path, :class => 'btn'

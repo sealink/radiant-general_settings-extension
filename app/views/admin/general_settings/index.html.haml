@@ -1,0 +1,28 @@
+%h1
+  General Settings
+
+.setting_block
+  - if @general_settings.blank?
+    %p
+      No general Settings have been added.
+
+  - else
+    %table{:class => "index", :cellspacing => "0"}
+      %thead
+        %tr
+          %th ID
+          %th Key
+          %th Value
+          %th Description
+          %th
+      %tbody
+        - @general_settings.each do |setting|
+          %tr[setting]
+            %td= setting.id
+            %td= link_to setting.key, edit_admin_general_setting_path(setting)
+            %td= setting.value
+            %td= setting.description
+            %td= link_to "delete", admin_general_setting_path(setting), :method => :delete
+
+  %p
+    = link_to "New Setting", new_admin_general_setting_path
