@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   ## the sub! line in the Rakefile
   s.name = 'radiant-general_settings-extension'
   s.version = '0.0.1'
-  s.date = '2013-05-20'
+  s.date = '2013-05-31'
 
   ## Make sure your summary is short. The description may be as long
   ## as you like.
@@ -61,6 +61,7 @@ Gem::Specification.new do |s|
   # = MANIFEST =
   s.files = %w[
     Gemfile
+    README.md
     Rakefile
     app/controllers/admin/general_settings_controller.rb
     app/models/general_setting.rb
@@ -68,8 +69,12 @@ Gem::Specification.new do |s|
     app/views/admin/general_settings/index.html.haml
     app/views/admin/general_settings/new.html.haml
     config/routes.rb
+    db/migrate/001_create_general_settings.rb
+    db/migrate/002_migrate_general_settings.rb
     general_settings_extension.rb
+    lib/radiant-general_settings-extension.rb
     lib/tags/general_settings_tags.rb
+    lib/tasks/general_settings_extension_tasks.rake
     radiant-general_settings-extension.gemspec
     spec/radius_spec_helper.rb
     spec/spec_helper.rb

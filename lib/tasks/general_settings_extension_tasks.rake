@@ -1,7 +1,6 @@
 namespace :radiant do
   namespace :extensions do
     namespace :general_settings do
-      
       desc "Runs the migration of the General Settings extension"
       task :migrate => :environment do
         require 'radiant/extension_migrator'
