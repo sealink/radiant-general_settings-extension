@@ -16,9 +16,14 @@ module GeneralSettingsTags
     Note that
       * :key is a required option.
       * If the key does not exist then a blank string is returned
+      * If the html attribute is present, html content will not be escaped
   '
   tag "general_setting" do |tag|
-    GeneralSetting[tag.attr['key']]
+    if tag.attr['html']
+      GeneralSetting[tag.attr['key']].html_safe
+    else
+      GeneralSetting[tag.attr['key']]
+    end
   end
 
 end
