@@ -20,7 +20,7 @@ module GeneralSettingsTags
   '
   tag "general_setting" do |tag|
     if tag.attr['html']
-      GeneralSetting[tag.attr['key']].html_safe
+      GeneralSetting[tag.attr['key']].to_s.html_safe
     else
       GeneralSetting[tag.attr['key']]
     end
