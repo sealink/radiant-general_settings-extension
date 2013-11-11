@@ -1,3 +1,9 @@
+require 'stub_module_helper'
+
+# Horrible global to disable mysql data-specific migrations
+TESTING = true
+
+## Radius stuff
 require 'radius'
 require 'radius_spec_helper'
 
